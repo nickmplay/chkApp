@@ -1,4 +1,5 @@
 import { login, logout } from '../../actions/auth';
+import database from '../../firebase/firebase';
 
 test('should generate login action object', () => {
   const uid = 'abc123';

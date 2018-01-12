@@ -14,4 +14,22 @@ firebase.initializeApp(config);
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
+database.ref().set({
+  name: 'Andrew Mead',
+  age: 26,
+  stressLevel: 6,
+  job: {
+    title: 'Software developer',
+    company: 'Google'
+  },
+  location: {
+    city: 'Philadelphia',
+    country: 'United States'
+  }
+}).then(() => {
+  console.log('Data is saved!');
+}).catch((e) => {
+  console.log('This failed.', e);
+});
+
 export { firebase, googleAuthProvider, database as default };
