@@ -11,3 +11,9 @@ export const removeChecklist = (checklistToRemoveId) => ({
   type: 'REMOVE_CHECKLIST',
   checklistToRemoveId
 });
+
+//edit checklist
+export const editChecklist = (checklistUpdates) => ({
+  type: 'EDIT_CHECKLIST',
+  checklistUpdates
+});
