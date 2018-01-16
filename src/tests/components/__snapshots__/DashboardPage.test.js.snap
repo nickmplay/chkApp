@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render DashboardPage correctly 1`] = `
-<div>
-  Dashboard page content
+<div
+  className="content-container"
+>
+  <h1>
+    You have two checklists to use:
+  </h1>
+  <div>
+    Checklist 1
+  </div>
+  <div>
+    Checklist 2
+  </div>
 </div>
 `;
