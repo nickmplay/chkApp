@@ -12,7 +12,7 @@ export default (state = defaultChecklistState, action) => {
       return state.map((e) => {
         if (e.id === action.checklistUpdates.id) {
           return {
-            id: e.id,
+            ...e,
             items: action.checklistUpdates.items
           };
         } else {

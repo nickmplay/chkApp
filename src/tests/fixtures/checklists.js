@@ -1,12 +1,15 @@
 //sample checklist data for tests
 
 export default [{
-  id: 'bed time',
+  name: 'bed time',
+  id:1,
   items: ['lock back door', 'lock front door', 'turn off lights']
 }, {
-  id: 'car',
+  name: 'car',
+  id:2,
   items: ['rucksack 1', 'rucksack 2']
 }, {
-  id: 'friday',
+  name: 'friday',
+  id:3,
   items: ['fridge light', 'turn on urn']
 }];

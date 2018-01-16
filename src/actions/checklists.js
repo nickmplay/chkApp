@@ -1,9 +1,15 @@
 //checklist action generators
 
+import moment from 'moment';
+
 //add newChecklist object for dispatch
-export const addChecklist = (newChecklist) => ({
+export const addChecklist = ({ id = moment().valueOf(), name, items = [] }) => ({
   type: 'ADD_CHECKLIST',
-  newChecklist
+  newChecklist: {
+    id,
+    name,
+    items
+  }
 });
 
 //add removeChecklist object for dispatch

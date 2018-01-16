@@ -22,7 +22,7 @@ test('should add a checklists', () => {
 test('should remove checklist if id found', () => {
   const action = {
     type: 'REMOVE_CHECKLIST',
-    checklistToRemoveId: 'bed time'
+    checklistToRemoveId: 1
   };
   const state = checklistReducer([checklists[0]], action);
   expect(state).toEqual([]);
@@ -43,6 +43,7 @@ test('should edit checklist items by adding', () => {
   checklistUpdates.items.push('rucksack 3');
   const action = {
     type: 'EDIT_CHECKLIST',
+    id: checklistUpdates.id, 
     checklistUpdates
   };
   const state = checklistReducer(checklists, action);
@@ -54,6 +55,7 @@ test('should edit checklist items by removing', () => {
   checklistUpdates.items = [ checklistUpdates.items[1] ];
   const action = {
     type: 'EDIT_CHECKLIST',
+    id: checklistUpdates.id,
     checklistUpdates
   };
   const state = checklistReducer(checklists, action);
@@ -62,6 +64,7 @@ test('should edit checklist items by removing', () => {
 
 test('should not edit checklist items if id not found', () => {
   const checklistUpdates = {
+    name: 'doesnt exist',
     id: 'googledegook', 
     items: ['wont be doing this', 'or this either']
   };

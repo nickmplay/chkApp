@@ -10,6 +10,22 @@ test('should generate addChecklist action object', () => {
   });
 });
 
+test('should generate addChecklist action object with defaults', () => {
+  const newName = 'test defaults';
+  const action = addChecklist({ 
+    name: newName
+  });
+  expect(action).toEqual({
+    type: 'ADD_CHECKLIST',
+    newChecklist: {
+      id: 0,
+      name: newName,
+      items: []
+    }
+  });
+});
+
+
 test('should generate removeChecklist action object', () => {
   const checklistToRemoveId = checklists[0].id;
   const action = removeChecklist(checklistToRemoveId);
