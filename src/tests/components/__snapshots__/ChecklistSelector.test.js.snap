@@ -2,35 +2,63 @@
 
 exports[`should render ChecklistSelector correctly with data 1`] = `
 <div>
-  <p
-    className="content-container"
+  <Link
+    className="content-container list-item"
     key="1"
+    replace={false}
+    to="/view/1"
   >
-    bed time
-  </p>
-  <p
-    className="content-container"
+    <p
+      className="content-container"
+      key="1"
+    >
+      bed time
+    </p>
+  </Link>
+  <Link
+    className="content-container list-item"
     key="2"
+    replace={false}
+    to="/view/2"
   >
-    car
-  </p>
-  <p
-    className="content-container"
+    <p
+      className="content-container"
+      key="2"
+    >
+      car
+    </p>
+  </Link>
+  <Link
+    className="content-container list-item"
     key="3"
+    replace={false}
+    to="/view/3"
   >
-    friday
-  </p>
+    <p
+      className="content-container"
+      key="3"
+    >
+      friday
+    </p>
+  </Link>
 </div>
 `;
 
 exports[`should render ChecklistSelector correctly with only one 1`] = `
 <div>
-  <p
-    className="content-container"
+  <Link
+    className="content-container list-item"
     key="1"
+    replace={false}
+    to="/view/1"
   >
-    bed time
-  </p>
+    <p
+      className="content-container"
+      key="1"
+    >
+      bed time
+    </p>
+  </Link>
 </div>
 `;
 

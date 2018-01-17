@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ViewChecklistPage correctly with data 1`] = `
+<div
+  className="content-container"
+>
+  <h1>
+    Viewing 
+    bed time
+  </h1>
+  <p
+    key="0"
+  >
+    lock back door
+  </p>
+  <p
+    key="1"
+  >
+    lock front door
+  </p>
+  <p
+    key="2"
+  >
+    turn off lights
+  </p>
+  <Link
+    replace={false}
+    to="/"
+  >
+    Return to dashboard
+  </Link>
+</div>
+`;
