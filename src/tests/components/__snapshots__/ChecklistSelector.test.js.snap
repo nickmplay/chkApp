@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ChecklistSelector correctly with data 1`] = `
+<div>
+  <p
+    className="content-container"
+    key="1"
+  >
+    bed time
+  </p>
+  <p
+    className="content-container"
+    key="2"
+  >
+    car
+  </p>
+  <p
+    className="content-container"
+    key="3"
+  >
+    friday
+  </p>
+</div>
+`;
+
+exports[`should render ChecklistSelector correctly with only one 1`] = `
+<div>
+  <p
+    className="content-container"
+    key="1"
+  >
+    bed time
+  </p>
+</div>
+`;
+
+exports[`should render ChecklistSelector correctly without data 1`] = `<div />`;
