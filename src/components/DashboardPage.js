@@ -1,11 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const DashboardPage = () => (
+export const DashboardPage = (props) => (
   <div className="content-container">
-    <h1>You have two checklists to use:</h1>
-    <div>Checklist 1</div>
-    <div>Checklist 2</div>
+    <h1>You have {props.checklists.length} checklists to use:</h1>
+    {props.checklists.map( checklist => {
+      return <p key={checklist.id}>{checklist.name}</p>;
+    })}
   </div>
 );
 
-export default DashboardPage;
+const mapStateToProps = (state, props) => ({
+  checklists: state.checklists
+});
+
+export default connect(mapStateToProps)(DashboardPage);

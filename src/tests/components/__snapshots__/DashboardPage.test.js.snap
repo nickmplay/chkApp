@@ -5,13 +5,24 @@ exports[`should render DashboardPage correctly 1`] = `
   className="content-container"
 >
   <h1>
-    You have two checklists to use:
+    You have 
+    3
+     checklists to use:
   </h1>
-  <div>
-    Checklist 1
-  </div>
-  <div>
-    Checklist 2
-  </div>
+  <p
+    key="1"
+  >
+    bed time
+  </p>
+  <p
+    key="2"
+  >
+    car
+  </p>
+  <p
+    key="3"
+  >
+    friday
+  </p>
 </div>
 `;
