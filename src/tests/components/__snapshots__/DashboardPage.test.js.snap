@@ -1,28 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render DashboardPage correctly 1`] = `
-<div
-  className="content-container"
->
-  <h1>
-    You have 
-    3
-     checklists to use:
-  </h1>
+exports[`should render DashboardPage correctly with data 1`] = `
+<div>
+  <ChecklistTitle
+    checklists={
+      Array [
+        Object {
+          "id": 1,
+          "items": Array [
+            "lock back door",
+            "lock front door",
+            "turn off lights",
+          ],
+          "name": "bed time",
+        },
+        Object {
+          "id": 2,
+          "items": Array [
+            "rucksack 1",
+            "rucksack 2",
+          ],
+          "name": "car",
+        },
+        Object {
+          "id": 3,
+          "items": Array [
+            "fridge light",
+            "turn on urn",
+          ],
+          "name": "friday",
+        },
+      ]
+    }
+  />
   <p
+    className="content-container"
     key="1"
   >
     bed time
   </p>
   <p
+    className="content-container"
     key="2"
   >
     car
   </p>
   <p
+    className="content-container"
     key="3"
   >
     friday
   </p>
+</div>
+`;
+
+exports[`should render DashboardPage correctly with only one 1`] = `
+<div>
+  <ChecklistTitle
+    checklists={
+      Array [
+        Object {
+          "id": 1,
+          "items": Array [
+            "lock back door",
+            "lock front door",
+            "turn off lights",
+          ],
+          "name": "bed time",
+        },
+      ]
+    }
+  />
+  <p
+    className="content-container"
+    key="1"
+  >
+    bed time
+  </p>
+</div>
+`;
+
+exports[`should render DashboardPage correctly without data 1`] = `
+<div>
+  <ChecklistTitle
+    checklists={Array []}
+  />
 </div>
 `;

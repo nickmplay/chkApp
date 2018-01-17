@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { ChecklistTitle } from './ChecklistTitle';
 
 export const DashboardPage = (props) => (
-  <div className="content-container">
-    <h1>You have {props.checklists.length} checklists to use:</h1>
+  <div>
+    <ChecklistTitle checklists={props.checklists} />
     {props.checklists.map( checklist => {
-      return <p key={checklist.id}>{checklist.name}</p>;
+      return <p className="content-container" key={checklist.id}>{checklist.name}</p>;
     })}
   </div>
 );

@@ -18,6 +18,11 @@ store.dispatch(addChecklist({
   id: 12,
   items: ['build site', 'test site']
 }));
+store.dispatch(addChecklist({
+  name: 'make lunch',
+  id: 14,
+  items: ['get milk', 'get shake']
+}));
 
 const jsx = (
   <Provider store={store}>

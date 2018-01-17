@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ChecklistTitle correctly with data 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      You have 
+      <span>
+        3
+      </span>
+       
+      checklists
+       to use:
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`should render ChecklistTitle correctly with only one 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      You have 
+      <span>
+        1
+      </span>
+       
+      checklist
+       to use:
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`should render ChecklistTitle correctly without data 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      You have 
+      <span>
+        0
+      </span>
+       
+      checklists
+       to use:
+    </h1>
+  </div>
+</div>
+`;
