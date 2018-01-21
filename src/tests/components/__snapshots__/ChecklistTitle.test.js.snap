@@ -18,6 +18,17 @@ exports[`should render ChecklistTitle correctly with data 1`] = `
       checklists
        to use:
     </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/add"
+      >
+        Add Checklist
+      </Link>
+    </div>
   </div>
 </div>
 `;
@@ -40,6 +51,17 @@ exports[`should render ChecklistTitle correctly with only one 1`] = `
       checklist
        to use:
     </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/add"
+      >
+        Add Checklist
+      </Link>
+    </div>
   </div>
 </div>
 `;
@@ -62,6 +84,17 @@ exports[`should render ChecklistTitle correctly without data 1`] = `
       checklists
        to use:
     </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/add"
+      >
+        Add Checklist
+      </Link>
+    </div>
   </div>
 </div>
 `;
