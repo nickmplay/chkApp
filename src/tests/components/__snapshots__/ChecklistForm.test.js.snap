@@ -18,7 +18,7 @@ exports[`should handle onSubmit 1`] = `
       onChange={[Function]}
       placeholder="Add Items, seperating each with a comma. Eg Item 1, Item 2, Item 3"
       type="text"
-      value="rucksack 1,rucksack 2"
+      value="rucksack 1, rucksack 2"
     />
     <button
       className="button"

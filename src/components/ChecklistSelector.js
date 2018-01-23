@@ -6,9 +6,12 @@ export const ChecklistSelector = (props) => {
     <div>
       {props.checklists.map(checklist => {
         return (
-          <Link className="content-container list-item" key={checklist.id} to={`/view/${checklist.id}`}>
-            <p className="content-container" key={checklist.id}>{checklist.name}</p>
-          </Link>
+          <div className="content-container list-item" key={checklist.id}>
+            <Link to={`/view/${checklist.id}`}>
+              <p  key={checklist.id + 1}>{checklist.name}</p>
+            </Link>
+            <Link key={checklist.id + 2} to={`/edit/${checklist.id}`}>Edit</Link>
+          </div>
         );
       })}
     </div>);

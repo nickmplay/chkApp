@@ -2,63 +2,99 @@
 
 exports[`should render ChecklistSelector correctly with data 1`] = `
 <div>
-  <Link
+  <div
     className="content-container list-item"
     key="1"
-    replace={false}
-    to="/view/1"
   >
-    <p
-      className="content-container"
-      key="1"
+    <Link
+      replace={false}
+      to="/view/1"
     >
-      bed time
-    </p>
-  </Link>
-  <Link
+      <p
+        key="2"
+      >
+        bed time
+      </p>
+    </Link>
+    <Link
+      key="3"
+      replace={false}
+      to="/edit/1"
+    >
+      Edit
+    </Link>
+  </div>
+  <div
     className="content-container list-item"
     key="2"
-    replace={false}
-    to="/view/2"
   >
-    <p
-      className="content-container"
-      key="2"
+    <Link
+      replace={false}
+      to="/view/2"
     >
-      car
-    </p>
-  </Link>
-  <Link
+      <p
+        key="3"
+      >
+        car
+      </p>
+    </Link>
+    <Link
+      key="4"
+      replace={false}
+      to="/edit/2"
+    >
+      Edit
+    </Link>
+  </div>
+  <div
     className="content-container list-item"
     key="3"
-    replace={false}
-    to="/view/3"
   >
-    <p
-      className="content-container"
-      key="3"
+    <Link
+      replace={false}
+      to="/view/3"
     >
-      friday
-    </p>
-  </Link>
+      <p
+        key="4"
+      >
+        friday
+      </p>
+    </Link>
+    <Link
+      key="5"
+      replace={false}
+      to="/edit/3"
+    >
+      Edit
+    </Link>
+  </div>
 </div>
 `;
 
 exports[`should render ChecklistSelector correctly with only one 1`] = `
 <div>
-  <Link
+  <div
     className="content-container list-item"
     key="1"
-    replace={false}
-    to="/view/1"
   >
-    <p
-      className="content-container"
-      key="1"
+    <Link
+      replace={false}
+      to="/view/1"
     >
-      bed time
-    </p>
-  </Link>
+      <p
+        key="2"
+      >
+        bed time
+      </p>
+    </Link>
+    <Link
+      key="3"
+      replace={false}
+      to="/edit/1"
+    >
+      Edit
+    </Link>
+  </div>
 </div>
 `;
 

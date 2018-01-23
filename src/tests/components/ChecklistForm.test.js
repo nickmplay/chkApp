@@ -36,7 +36,8 @@ test('should handle onSubmit', () => {
   const onSubmit = jest.fn();
   const checklistToAdd = {
     name: checklists[1].name, 
-    items: checklists[1].items
+    items: checklists[1].items,
+    id: ''
   };
   const wrapper = shallow(<ChecklistForm
     command="Add"
@@ -72,6 +73,7 @@ test('should handle onSubmit manual', () => {
   expect(wrapper).toMatchSnapshot();
   expect(onSubmit).toHaveBeenLastCalledWith({
     name: wrapper.state('name'),
-    items: wrapper.state('items').split(',')
+    items: wrapper.state('items').split(', '),
+    id: ''
   });
 });

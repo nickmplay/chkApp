@@ -43,7 +43,6 @@ test('should edit checklist items by adding', () => {
   checklistUpdates.items.push('rucksack 3');
   const action = {
     type: 'EDIT_CHECKLIST',
-    id: checklistUpdates.id, 
     checklistUpdates
   };
   const state = checklistReducer(checklists, action);
@@ -55,7 +54,6 @@ test('should edit checklist items by removing', () => {
   checklistUpdates.items = [ checklistUpdates.items[1] ];
   const action = {
     type: 'EDIT_CHECKLIST',
-    id: checklistUpdates.id,
     checklistUpdates
   };
   const state = checklistReducer(checklists, action);

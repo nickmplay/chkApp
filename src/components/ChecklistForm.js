@@ -6,7 +6,8 @@ export class ChecklistForm extends React.Component {
     this.state = {
       command: props.command,
       name: props.checklist ? props.checklist.name : '',
-      items: props.checklist ? props.checklist.items.join(',') : ''
+      items: props.checklist ? props.checklist.items.join(', ') : '',
+      id: props.checklist ? props.checklist.id : ''
     };
   }
   onNameChange = (e) => {
@@ -25,7 +26,8 @@ export class ChecklistForm extends React.Component {
 
     this.props.onSubmit({
       name: this.state.name,
-      items: this.state.items.split(',')
+      items: this.state.items.split(', '),
+      id: this.state.id
     });
   };
 
@@ -45,7 +47,7 @@ export class ChecklistForm extends React.Component {
             value={this.state.items}
             onChange={this.onItemChange}
           />
-          <button className="button">{this.state.command} Checklist</button>
+          <button className="button">{this.state.command == "Add" ? "Add" : "Save"} Checklist</button>
         </form>
       </div>
     );
