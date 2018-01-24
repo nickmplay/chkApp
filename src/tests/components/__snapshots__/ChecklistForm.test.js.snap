@@ -60,6 +60,66 @@ exports[`should handle onSubmit manual 1`] = `
 </div>
 `;
 
+exports[`should handle onSubmit manual edit 1`] = `
+<div
+  className="content-container"
+>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Checklist Name"
+      type="text"
+      value="car"
+    />
+    <textarea
+      onChange={[Function]}
+      placeholder="Add Items, seperating each with a comma. Eg Item 1, Item 2, Item 3"
+      type="text"
+      value="rucksack 1, rucksack 2"
+    />
+    <button
+      className="button"
+    >
+      Save
+       Checklist
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should handle onSubmit manual edit 2`] = `
+<div
+  className="content-container"
+>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Checklist Name"
+      type="text"
+      value="car updated"
+    />
+    <textarea
+      onChange={[Function]}
+      placeholder="Add Items, seperating each with a comma. Eg Item 1, Item 2, Item 3"
+      type="text"
+      value="rucksack 1, rucksack 2, another item"
+    />
+    <button
+      className="button"
+    >
+      Save
+       Checklist
+    </button>
+  </form>
+</div>
+`;
+
 exports[`should render ChecklistForm correctly 1`] = `
 <div
   className="content-container"

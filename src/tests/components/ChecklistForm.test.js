@@ -31,7 +31,7 @@ test('should set items if textarea changes', () => {
 });
 
 
-//submit function tests
+//submit function tests - add
 test('should handle onSubmit', () => {
   const onSubmit = jest.fn();
   const checklistToAdd = {
@@ -75,5 +75,38 @@ test('should handle onSubmit manual', () => {
     name: wrapper.state('name'),
     items: wrapper.state('items').split(', '),
     id: ''
+  });
+});
+
+//submit function tests - edit
+test('should handle onSubmit manual edit', () => {
+  const onSubmit = jest.fn();
+  const checklistToEdit = {
+    name: checklists[1].name, 
+    items: checklists[1].items,
+    id: checklists[1].id
+  };
+  const newItemsStr = checklistToEdit.items.join(', ') + ', another item';
+  const newName = checklistToEdit.name + ' updated';
+  const wrapper = shallow(<ChecklistForm
+    command="Edit"
+    checklist={checklistToEdit}
+    onSubmit={onSubmit}
+  />);
+  expect(wrapper).toMatchSnapshot();
+  wrapper.find('input').at(0).simulate('change', {
+    target: { value: newName }
+  });
+  wrapper.find('textarea').at(0).simulate('change', {
+    target: { value:newItemsStr }
+  });
+  wrapper.find('form').simulate('submit', {
+    preventDefault: () => { }
+  });
+  expect(wrapper).toMatchSnapshot();
+  expect(onSubmit).toHaveBeenLastCalledWith({
+    name: wrapper.state('name'),
+    items: newItemsStr.split(', '),
+    id: wrapper.state('id')
   });
 });
