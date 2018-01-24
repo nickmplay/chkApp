@@ -13,7 +13,8 @@ export default (state = defaultChecklistState, action) => {
         if (e.id === action.checklistUpdates.id) {
           return {
             ...e,
-            items: action.checklistUpdates.items
+            items: action.checklistUpdates.items,
+            name:action.checklistUpdates.name
           };
         } else {
           return e; 

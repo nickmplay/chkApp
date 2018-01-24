@@ -60,6 +60,17 @@ test('should edit checklist items by removing', () => {
   expect(state).toEqual([ checklists[0], checklistUpdates, checklists[2] ]);
 });
 
+test('should edit checklist name', () => {
+  const checklistUpdates = checklists[1];
+  checklistUpdates.name = 'new name';
+  const action = {
+    type: 'EDIT_CHECKLIST',
+    checklistUpdates
+  };
+  const state = checklistReducer(checklists, action);
+  expect(state).toEqual([ checklists[0], checklistUpdates, checklists[2] ]);
+});
+
 test('should not edit checklist items if id not found', () => {
   const checklistUpdates = {
     name: 'doesnt exist',
