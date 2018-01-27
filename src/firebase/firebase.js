@@ -14,22 +14,45 @@ firebase.initializeApp(config);
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-database.ref().set({
-  name: 'Andrew Mead',
-  age: 26,
-  stressLevel: 6,
-  job: {
-    title: 'Software developer',
-    company: 'Google'
-  },
-  location: {
-    city: 'Philadelphia',
-    country: 'United States'
-  }
-}).then(() => {
-  console.log('Data is saved!');
-}).catch((e) => {
-  console.log('This failed.', e);
+export { firebase, googleAuthProvider, database as default };
+
+//firebase playground
+//push data onto user branch
+database.ref(`users/test-id/checklists`).push({
+  name: 'checklist-name',
+  id: 12,
+  items: 'item1@@item2'
+}).then((ref) => {
+  database.ref(`users/test-id/checklists/${ref.key}`)
+  .once('value')
+  .then((snapshot) => {
+    const dataRetrieve1 = [];
+    const dataRetrieve3 = {};
+    console.log(snapshot.val());
+
+    snapshot.forEach((childSnapshot) => {
+      dataRetrieve1.push({
+        id: childSnapshot.key,
+        value: childSnapshot.val()
+      });
+      dataRetrieve3[childSnapshot.key] = childSnapshot.val();
+    });
+    console.log(dataRetrieve1);
+    console.log(dataRetrieve3);
+  });
 });
 
-export { firebase, googleAuthProvider, database as default };
+//read data from fb and reformat using firebase id
+database.ref(`users/test-id/checklists/`)
+  .once('value')
+  .then((snapshot)=>{
+    console.log(snapshot.val());
+    const dataAll = [];
+    snapshot.forEach((child)=>{
+      dataAll.push({
+        fbid: child.key,
+        ...child.val()
+      });
+    });
+    console.log(dataAll);
+  });
