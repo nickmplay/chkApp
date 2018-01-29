@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addChecklist } from '../actions/checklists';
+import { startAddChecklist } from '../actions/firebase';
 import { ChecklistForm } from './ChecklistForm';
 
 export class AddChecklistPage extends React.Component {
   onSubmit = ({name, items}) => {
-    this.props.addChecklist({
+    this.props.startAddChecklist({
       name,
       items
     });
@@ -30,7 +31,7 @@ export class AddChecklistPage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addChecklist: (checklist) => dispatch(addChecklist(checklist))
+  startAddChecklist: (checklist) => dispatch(startAddChecklist(checklist))
 });
 
 export default connect(undefined, mapDispatchToProps)(AddChecklistPage);

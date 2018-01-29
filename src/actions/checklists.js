@@ -23,3 +23,8 @@ export const editChecklist = (checklistUpdates) => ({
   type: 'EDIT_CHECKLIST',
   checklistUpdates
 });
+
+//clear all checklists
+export const clearChecklists = () => ({
+  type: 'CLEAR_CHECKLISTS'
+});

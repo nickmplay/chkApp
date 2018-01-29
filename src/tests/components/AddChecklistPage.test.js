@@ -12,7 +12,7 @@ test('should render AddChecklistPage correctly', () => {
 //test onSubmit
 test('should call AddChecklistPage onSubmit', () => {
   const onSubmit = jest.fn();
-  const addChecklist = jest.fn();
+  const startAddChecklist = jest.fn();
   const history = { push: jest.fn() };
   const checklistToAdd = {
     name: checklists[1].name, 
@@ -20,11 +20,11 @@ test('should call AddChecklistPage onSubmit', () => {
   };
   const wrapper = shallow(<AddChecklistPage
     onSubmit={onSubmit}
-    addChecklist={addChecklist}
+    startAddChecklist={startAddChecklist}
     history={history}
   />);
 
   wrapper.find('ChecklistForm').prop('onSubmit')(checklistToAdd);
   expect(history.push).toHaveBeenLastCalledWith('/');
-  expect(addChecklist).toHaveBeenLastCalledWith(checklistToAdd);
+  expect(startAddChecklist).toHaveBeenLastCalledWith(checklistToAdd);
 });

@@ -14,7 +14,7 @@ test('should render EditChecklistPage correctly', () => {
 //test onSubmit
 test('should call EditChecklistPage onSubmit', () => {
   const onSubmit = jest.fn();
-  const editChecklist = jest.fn();
+  const startEditChecklist = jest.fn();
   const history = { push: jest.fn() };
   const checklistToEdit = {
     name: checklists[1].name,
@@ -22,53 +22,53 @@ test('should call EditChecklistPage onSubmit', () => {
   };
   const wrapper = shallow(<EditChecklistPage
     onSubmit={onSubmit}
-    editChecklist={editChecklist}
+    startEditChecklist={startEditChecklist}
     history={history}
     checklist={checklistToEdit}
   />);
 
   wrapper.find('ChecklistForm').prop('onSubmit')(checklistToEdit);
   expect(history.push).toHaveBeenLastCalledWith('/');
-  expect(editChecklist).toHaveBeenLastCalledWith(checklistToEdit);
+  expect(startEditChecklist).toHaveBeenLastCalledWith(checklistToEdit);
 });
 
 //test onRemove 
 test('should call onRemove and implement', () => {
   const onRemove = jest.fn();
-  const removeChecklist = jest.fn();
+  const startRemoveChecklist = jest.fn();
   const history = { push: jest.fn() };
   const confirm = jest.spyOn(window, 'confirm')
   confirm.mockReturnValueOnce(true);
   const checklistToRemove = checklists[1];
   const wrapper = shallow(<EditChecklistPage
     onRemove={onRemove}
-    removeChecklist={removeChecklist}
+    startRemoveChecklist={startRemoveChecklist}
     history={history}
     checklist={checklistToRemove}
   />);
   expect(wrapper).toMatchSnapshot();
   wrapper.find('button').simulate('click');
   expect(confirm).toHaveBeenCalled();
-  expect(removeChecklist).toHaveBeenLastCalledWith(checklistToRemove.id);
+  expect(startRemoveChecklist).toHaveBeenLastCalledWith(checklistToRemove.id);
   expect(history.push).toHaveBeenLastCalledWith('/');
 });
 
 test('should call onRemove and not implement', () => {
   const onRemove = jest.fn();
-  const removeChecklist = jest.fn();
+  const startRemoveChecklist = jest.fn();
   const history = { push: jest.fn() };
   const confirm = jest.spyOn(window, 'confirm')
   confirm.mockReturnValueOnce(false);
   const checklistToRemove = checklists[1];
   const wrapper = shallow(<EditChecklistPage
     onRemove={onRemove}
-    removeChecklist={removeChecklist}
+    startRemoveChecklist={startRemoveChecklist}
     history={history}
     checklist={checklistToRemove}
   />);
   expect(wrapper).toMatchSnapshot();
   wrapper.find('button').simulate('click');
   expect(confirm).toHaveBeenCalled();
-  expect(removeChecklist).not.toHaveBeenCalled();
+  expect(startRemoveChecklist).not.toHaveBeenCalled();
   expect(history.push).not.toHaveBeenCalled();
 });

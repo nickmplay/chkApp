@@ -10,10 +10,10 @@ exports[`should correctly render LoginPage 1`] = `
     <h1
       className="box-layout__title"
     >
-      Boilerplate
+      Checklist App
     </h1>
     <p>
-      Tag line for app.
+      Create and view checklists
     </p>
     <button
       className="button"

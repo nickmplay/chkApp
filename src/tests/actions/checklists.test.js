@@ -1,4 +1,4 @@
-import { addChecklist, removeChecklist, editChecklist } from '../../actions/checklists';
+import { addChecklist, removeChecklist, editChecklist, clearChecklists } from '../../actions/checklists';
 import checklists from '../fixtures/checklists';
 
 test('should generate addChecklist action object', () => {
@@ -25,13 +25,19 @@ test('should generate addChecklist action object with defaults', () => {
   });
 });
 
-
 test('should generate removeChecklist action object', () => {
   const checklistToRemoveId = checklists[0].id;
   const action = removeChecklist(checklistToRemoveId);
   expect(action).toEqual({
     type: 'REMOVE_CHECKLIST',
     checklistToRemoveId
+  });
+});
+
+test('should generate clearChecklists action object', () => {
+  const action = clearChecklists();
+  expect(action).toEqual({
+    type: 'CLEAR_CHECKLISTS'
   });
 });
 

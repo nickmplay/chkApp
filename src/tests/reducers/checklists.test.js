@@ -37,6 +37,15 @@ test('should not remove checklist if not id found', () => {
   expect(state).toEqual(checklists);
 });
 
+//clear checklists
+test('should clear all checklists', () => {
+  const action = {
+    type: 'CLEAR_CHECKLISTS'
+  };
+  const state = checklistReducer([checklists[0]], action);
+  expect(state).toEqual([]);
+});
+
 //edit checklist items
 test('should edit checklist items by adding', () => {
   const checklistUpdates = checklists[1];
