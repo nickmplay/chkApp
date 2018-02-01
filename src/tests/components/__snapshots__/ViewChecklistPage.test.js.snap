@@ -1,5 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should change class upon clicking 1`] = `
+<div
+  className="content-container"
+>
+  <h1>
+    Viewing 
+    bed time
+  </h1>
+  <p
+    className="chk-unselected"
+    key="0"
+    onClick={[Function]}
+  >
+     
+    lock back door
+  </p>
+  <p
+    className="chk-unselected"
+    key="1"
+    onClick={[Function]}
+  >
+     
+    lock front door
+  </p>
+  <p
+    className="chk-unselected"
+    key="2"
+    onClick={[Function]}
+  >
+     
+    turn off lights
+  </p>
+  <Link
+    replace={false}
+    to="/"
+  >
+    Return to dashboard
+  </Link>
+</div>
+`;
+
 exports[`should render ViewChecklistPage correctly with data 1`] = `
 <div
   className="content-container"
@@ -9,18 +50,27 @@ exports[`should render ViewChecklistPage correctly with data 1`] = `
     bed time
   </h1>
   <p
+    className="chk-unselected"
     key="0"
+    onClick={[Function]}
   >
+     
     lock back door
   </p>
   <p
+    className="chk-unselected"
     key="1"
+    onClick={[Function]}
   >
+     
     lock front door
   </p>
   <p
+    className="chk-unselected"
     key="2"
+    onClick={[Function]}
   >
+     
     turn off lights
   </p>
   <Link

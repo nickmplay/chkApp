@@ -1,0 +1,15 @@
+.chk-unselected {
+  background: $light-grey
+}
+
+.chk-unselected:before {
+  content: '\2610'
+}
+
+.chk-selected {
+  background: $green
+}
+
+.chk-selected:before {
+  content: '\2611'
+}
