@@ -23,7 +23,22 @@ export class ChecklistForm extends React.Component {
     e.preventDefault();
 
     //form validation
+    if(this.state.name.length < 1 && this.state.items.length < 1){
+      alert('Please enter a checklist name and items');
+      return false;
+    }
+    
+    if(this.state.name.length < 1){
+      alert('Please enter a checklist name');
+      return false;
+    }
 
+    if(this.state.items.length < 1){
+      alert('Please enter some items for the checklist');
+      return false;
+    }
+
+    // submit validated form
     this.props.onSubmit({
       name: this.state.name,
       items: this.state.items.split(', '),
