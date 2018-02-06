@@ -120,6 +120,96 @@ exports[`should handle onSubmit manual edit 2`] = `
 </div>
 `;
 
+exports[`should not run onSubmit if validation fails - both 1`] = `
+<div
+  className="content-container"
+>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Checklist Name"
+      type="text"
+      value=""
+    />
+    <textarea
+      onChange={[Function]}
+      placeholder="Add Items, seperating each with a comma. Eg Item 1, Item 2, Item 3"
+      type="text"
+      value=""
+    />
+    <button
+      className="button"
+    >
+      Add
+       Checklist
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should not run onSubmit if validation fails - items 1`] = `
+<div
+  className="content-container"
+>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Checklist Name"
+      type="text"
+      value="bed time"
+    />
+    <textarea
+      onChange={[Function]}
+      placeholder="Add Items, seperating each with a comma. Eg Item 1, Item 2, Item 3"
+      type="text"
+      value=""
+    />
+    <button
+      className="button"
+    >
+      Add
+       Checklist
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should not run onSubmit if validation fails - name 1`] = `
+<div
+  className="content-container"
+>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Checklist Name"
+      type="text"
+      value=""
+    />
+    <textarea
+      onChange={[Function]}
+      placeholder="Add Items, seperating each with a comma. Eg Item 1, Item 2, Item 3"
+      type="text"
+      value="lock back door, lock front door, turn off lights"
+    />
+    <button
+      className="button"
+    >
+      Add
+       Checklist
+    </button>
+  </form>
+</div>
+`;
+
 exports[`should render ChecklistForm correctly 1`] = `
 <div
   className="content-container"

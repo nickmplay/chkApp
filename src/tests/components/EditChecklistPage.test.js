@@ -57,7 +57,7 @@ test('should call onRemove and not implement', () => {
   const onRemove = jest.fn();
   const startRemoveChecklist = jest.fn();
   const history = { push: jest.fn() };
-  const confirm = jest.spyOn(window, 'confirm')
+  const confirm = jest.spyOn(window, 'confirm');
   confirm.mockReturnValueOnce(false);
   const checklistToRemove = checklists[1];
   const wrapper = shallow(<EditChecklistPage

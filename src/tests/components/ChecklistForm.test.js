@@ -110,3 +110,67 @@ test('should handle onSubmit manual edit', () => {
     id: wrapper.state('id')
   });
 });
+
+//test validation
+test('should not run onSubmit if validation fails - both', () => {
+  const onSubmit = jest.fn();
+  const alert = jest.spyOn(window, 'alert');
+  const checklistToAdd = {
+    name: '', 
+    items: [],
+    id: ''
+  };
+  const wrapper = shallow(<ChecklistForm
+    command="Add"
+    onSubmit={onSubmit}
+    checklist={checklistToAdd}
+  />);
+  wrapper.find('form').simulate('submit', {
+    preventDefault: () => { }
+  });
+  expect(wrapper).toMatchSnapshot();
+  expect(alert).toHaveBeenCalled();
+  expect(onSubmit).not.toHaveBeenCalled();
+});
+
+test('should not run onSubmit if validation fails - name', () => {
+  const onSubmit = jest.fn();
+  const alert = jest.spyOn(window, 'alert');
+  const checklistToAdd = {
+    name: '', 
+    items: checklists[0].items,
+    id: ''
+  };
+  const wrapper = shallow(<ChecklistForm
+    command="Add"
+    onSubmit={onSubmit}
+    checklist={checklistToAdd}
+  />);
+  wrapper.find('form').simulate('submit', {
+    preventDefault: () => { }
+  });
+  expect(wrapper).toMatchSnapshot();
+  expect(alert).toHaveBeenCalled();
+  expect(onSubmit).not.toHaveBeenCalled();
+});
+
+test('should not run onSubmit if validation fails - items', () => {
+  const onSubmit = jest.fn();
+  const alert = jest.spyOn(window, 'alert');
+  const checklistToAdd = {
+    name: checklists[0].name, 
+    items: [],
+    id: ''
+  };
+  const wrapper = shallow(<ChecklistForm
+    command="Add"
+    onSubmit={onSubmit}
+    checklist={checklistToAdd}
+  />);
+  wrapper.find('form').simulate('submit', {
+    preventDefault: () => { }
+  });
+  expect(wrapper).toMatchSnapshot();
+  expect(alert).toHaveBeenCalled();
+  expect(onSubmit).not.toHaveBeenCalled();
+});
